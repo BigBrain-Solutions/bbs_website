@@ -1,10 +1,15 @@
-import React from 'react'
-import Header from './header'
+import React from "react";
+import Header from "./header";
+import MainPage from "./mainpage";
 
 export default function Index() {
   return (
     <div>
-      <Header className='w-full h-10%' />
+      <div>
+        <Header className="w-full" />
+
+        <MainPage className="w-full" />
+      </div>
     </div>
-  )
+  );
 }
