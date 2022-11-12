@@ -1,0 +1,11 @@
+{
+    "background.useDefault": false,
+    "background.customImages": [
+        "https://cdn.discordapp.com/attachments/518046015434260508/1041085598833856563/msiak_the_Builder.png"
+        
+    ],
+    "background.style": {
+        "opacity":0.4,
+        "background-size": "200px 270px"
+    }
+}

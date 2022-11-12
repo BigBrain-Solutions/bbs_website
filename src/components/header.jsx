@@ -3,15 +3,24 @@ import Temp from "../graphics/temp.svg";
 import Settings from "../graphics/settings.svg";
 import UserL from "../graphics/user_light.svg";
 
-function Header() {
+function Header(props) {
   return (
     <div className="w-full h-full flex flex-row bg-slate-800 p-1">
       <div className="w-1/3 self-center">
-        <img
-          src={Settings}
-          alt=""
-          className="h-10 w-10 ml-1 cursor-pointer transition ease-in-out delay-75 hover:scale-105"
-        />
+        <button
+          onClick={() => {
+            if (props.settings === false) {
+              props.setSettings(true);
+            } else {
+              props.setSettings(false);
+            }
+          }}
+        >
+          <img
+            src={Settings}
+            className="h-12 w-12 ml-1 pt-1 cursor-pointer transition ease-in-out delay-75 hover:scale-105"
+          />
+        </button>
       </div>
 
       <div className="w-1/3">

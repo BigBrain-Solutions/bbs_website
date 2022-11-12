@@ -1,7 +1,6 @@
-<svg id="SVGRoot" width="20px" height="20px" version="1.1" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
- <g fill="#94a3b8" stroke-linecap="round" stroke-miterlimit="3.3" stroke-width=".32121">
-  <rect x="2" y="4" width="16" height="2" ry="1"/>
-  <rect x="2" y="9" width="16" height="2" ry="1"/>
-  <rect x="2" y="14" width="16" height="2" ry="1"/>
- </g>
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-align-justified" width="60" height="60" viewBox="0 0 24 24" stroke-width="1.7" stroke="#94a3b8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="4" y1="6" x2="20" y2="6" />
+  <line x1="4" y1="12" x2="20" y2="12" />
+  <line x1="4" y1="18" x2="16" y2="18" />
 </svg>
