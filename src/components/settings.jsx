@@ -7,7 +7,23 @@ import Sun from "../graphics/sun.svg";
 function Settings(props) {
   const [isOn, setIsOn] = useState(false);
 
-  const toggleSwitch = () => setIsOn(!isOn);
+  const toogleDarkMode = () => {
+
+    setIsOn(!isOn);
+
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (isOn) {
+      document.documentElement.classList.add('dark')
+      localStorage.theme = 'dark'
+    
+    } else {
+    
+      localStorage.removeItem('theme')
+      localStorage.theme = 'light'
+
+      document.documentElement.classList.remove('dark')
+    }
+  }
 
   return (
     <div
@@ -53,7 +69,7 @@ function Settings(props) {
                 isOn ? "justify-end " : " "
               }`}
               isOn={isOn}
-              onClick={toggleSwitch}
+              onClick={toogleDarkMode}
             >
               <motion.div
                 className="w-6 h-6 bg-white rounded-full"

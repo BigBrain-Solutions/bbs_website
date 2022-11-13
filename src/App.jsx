@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./components/Index";
 
 export default function App() {
-  return <div>
+  return <div className="bg-slate-700 min-h-screen">
     <BrowserRouter>
       <Routes>
           <Route path='/' element={<Index/>} />
