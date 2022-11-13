@@ -1,11 +1,11 @@
 import React from "react";
-import Temp from "../graphics/temp.svg";
+import LogoText from "../graphics/BBS_text.svg";
 import Settings from "../graphics/settings.svg";
 import UserL from "../graphics/user_light.svg";
 
 function Header(props) {
   return (
-    <div className="w-full h-full flex flex-row bg-slate-800 p-1">
+    <div className="w-full h-full flex flex-row bg-slate-800 dark:bg-slate-300 p-1">
       <div className="w-1/3 self-center">
         <button
           onClick={() => {
@@ -26,7 +26,7 @@ function Header(props) {
 
       <div className="w-1/3">
         <div className="flex justify-center">
-          <img src={Temp} alt="" />
+          <img src={LogoText} alt="" />
         </div>
       </div>
 
@@ -34,7 +34,7 @@ function Header(props) {
         <div className="flex flex-row justify-end">
           <img src={UserL} alt="" className="h-10 w-10 self-center" />
 
-          <button className="m-2 bg-slate-400 p-2 text-sm rounded-lg font-semibold transition ease-in-out delay-75 hover:bg-slate-500 ">
+          <button className="m-2 bg-slate-400 p-2 text-sm rounded-lg font-semibold ease-in-out hover:scale-105 dark:bg-slate-500 transform active:scale-100 transition-transform">
             Sign in / Sign up
           </button>
         </div>
