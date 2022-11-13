@@ -19,6 +19,7 @@ function Header(props) {
           <img
             src={Settings}
             className="h-12 w-12 ml-1 pt-1 cursor-pointer transition ease-in-out delay-75 hover:scale-105"
+            alt="settings"
           />
         </button>
       </div>

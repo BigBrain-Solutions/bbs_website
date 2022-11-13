@@ -23,11 +23,30 @@ function Settings(props) {
       </button>
 
       <div className="flex flex-col h-full">
-        <div className="w-16 h-16 bg-slate-900 rounded-2xl "></div>
-        <div className="flex flex-col h-full justify-end mb-16">
-          <div className="flex flex-row justify-end p-5">
-            
-            {isOn ? (<img src={Moon} className="w-12 h-12 mr-2" />): (<img src={Sun} className="h-12 w-12 mr-2" />)}
+        <div className="h-screen"></div>
+
+          <div className="flex flex-row h-36 justify-end mb-2 p-5">
+            <div
+              className={`h-40 w-16 flex justify-between ${
+                isOn ? "flex-col" : "flex-col-reverse"
+              } `}
+            >
+              <motion.div
+                className="w-16 h-16 rounded-2xl "
+                layout
+                transition={spring}
+              >
+                <img src={Moon} className="w-12 h-12" />
+              </motion.div>
+
+              <motion.div
+                className="w-16 h-16 rounded-2xl "
+                layout
+                transition={spring}
+              >
+                <img src={Sun} className="h-12 w-12" />
+              </motion.div>
+            </div>
 
             <div
               className={`w-20 h-10 bg-slate-600 flex justify-start rounded-full p-2 mt-1 cursor-pointer ${
@@ -45,7 +64,7 @@ function Settings(props) {
           </div>
         </div>
       </div>
-    </div>
+
   );
 }
 
@@ -56,5 +75,3 @@ const spring = {
 };
 
 export default Settings;
-
-// {/* <img src={Moon} className="h-12 w-12" /> */}
