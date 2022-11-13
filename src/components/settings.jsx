@@ -27,7 +27,7 @@ function Settings(props) {
 
   return (
     <div
-      className={`top-0 w-64 h-full fixed border border-slate-700 dark:border-0 shadow-lg rounded-r-3xl bg-slate-800 dark:bg-gray-100 z-10
+      className={`top-0 w-64 h-full fixed border-r border-slate-700 dark:border-0 shadow-lg rounded-r-3xl bg-slate-800 dark:bg-gray-100 z-10
        ${props.trigger ? "left-0" : "left-[-384px]"} ease-in-out duration-300`}
     >
       <button
@@ -35,7 +35,7 @@ function Settings(props) {
           props.setTrigger(false);
         }}
       >
-        <img src={Close} className="w-12 h-12 m-2" />
+        <img src={Close} className="w-12 h-12 m-3" />
       </button>
 
       <div className="flex flex-col h-full">
