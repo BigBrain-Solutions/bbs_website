@@ -27,7 +27,7 @@ function Settings(props) {
 
   return (
     <div
-      className={`top-0 w-64 h-full fixed border border-slate-700 dark:border-slate-4 00 rounded-r-3xl bg-slate-800 dark:bg-slate-300 z-10
+      className={`top-0 w-64 h-full fixed border border-slate-700 dark:border-0 shadow-lg rounded-r-3xl bg-slate-800 dark:bg-gray-100 z-10
        ${props.trigger ? "left-0" : "left-[-384px]"} ease-in-out duration-300`}
     >
       <button
