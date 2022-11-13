@@ -8,7 +8,7 @@ function Settings(props) {
   const [isOn, setIsOn] = useState(false);
 
   const toggleSwitch = () => setIsOn(!isOn);
-
+  
   return (
     <div
       className={`top-0 w-64 h-full fixed border border-slate-700 rounded-r-3xl bg-slate-800 z-10
