@@ -13,15 +13,16 @@ function Settings(props) {
 
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
     if (isOn) {
-      document.documentElement.classList.add('dark')
-      localStorage.theme = 'dark'
-    
-    } else {
+
     
       localStorage.removeItem('theme')
       localStorage.theme = 'light'
 
       document.documentElement.classList.remove('dark')
+    } else {
+      document.documentElement.classList.add('dark')
+      localStorage.theme = 'dark' 
+      
     }
   }
 
@@ -52,7 +53,7 @@ function Settings(props) {
                 layout
                 transition={spring}
               >
-                <img src={Moon} className="w-12 h-12" />
+                <img src={Sun} className="w-12 h-12" />
               </motion.div>
 
               <motion.div
@@ -60,7 +61,7 @@ function Settings(props) {
                 layout
                 transition={spring}
               >
-                <img src={Sun} className="h-12 w-12" />
+                <img src={Moon} className="h-12 w-12" />
               </motion.div>
             </div>
 
