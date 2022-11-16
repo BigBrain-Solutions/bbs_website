@@ -2,8 +2,14 @@ import React from "react";
 import Close from "../graphics/close.svg";
 import Id from "../graphics/BBS_ID.svg";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import axios from "axios";
 
 function LogIn(props) {
+  const [username, setUsername] = useState("");
+  const [mail, setMail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <div
       className={`top-0 w-full h-full fixed border border-slate-700 dark:border-0 shadow-lg rounded-3xl bg-slate-800 dark:bg-gray-100 z-10
@@ -26,16 +32,25 @@ function LogIn(props) {
             <div className="">
               <input
                 placeholder="username"
-                className="p-2 m-1 border-black border rounded-lg"
+                className="p-2 m-1 w-[405px] text-sm rounded-lg block ] bg-slate-400 border border-gray-500 placeholder-gray-300 text-white dark:bg-gray-50 dark:border-gray-300 dark:placeholder-slate-400 dark:text-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                onChange={(event) => {
+                  setUsername(event.target.value);
+                  console.log("username", event.target.value);
+                }}
+                value={username}
               />
             </div>
             <div>
               <input
                 type="email"
                 id="email"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[405px] p-2 m-1 dark:bg-slate-500 dark:border-gray-500 dark:placeholder-gray-300 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="p-2 m-1 mt-2 w-[405px] text-sm rounded-lg block ] bg-slate-400 border border-gray-500 placeholder-gray-300 text-white dark:bg-gray-50 dark:border-gray-300 dark:placeholder-slate-400 dark:text-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Email"
-                required
+                onChange={(event) => {
+                  setMail(event.target.value);
+                  console.log("email", event.target.value);
+                }}
+                value={mail}
               />
             </div>
             <div className="flex flex-row">
@@ -43,21 +58,26 @@ function LogIn(props) {
                 <input
                   type="password"
                   placeholder="password"
-                  className="p-2 m-1 border-black border rounded-lg"
+                  className="p-2 m-1 w-[198px] text-sm rounded-lg block ] bg-slate-400 border border-gray-500 placeholder-gray-300 text-white dark:bg-gray-50 dark:border-gray-300 dark:placeholder-slate-400 dark:text-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  onChange={(event) => {
+                    setPassword(event.target.value);
+                    console.log("email", event.target.value);
+                  }}
                 />
               </div>
               <div>
                 <input
                   type="password"
                   placeholder="confirm"
-                  className="p-2 m-1 border-black border rounded-lg"
+                  className="p-2 m-1 w-[198px] text-sm rounded-lg block ] bg-slate-400 border border-gray-500 placeholder-gray-300 text-white dark:bg-gray-50 dark:border-gray-300 dark:placeholder-slate-400 dark:text-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
               </div>
             </div>
             <div>
-              <button className="p-3 m-1 w-36 bg-slate-400 text-sm rounded-lg font-semibold shadow-md ease-in-out hover:scale-105 dark:bg-slate-500 transform active:scale-100 transition-transform dark:text-gray-200 sm:block hidden">
-                {" "}
-                Register
+              <button className="p-3 m-1 w-36 bg-slate-400 text-sm rounded-lg font-semibold shadow-md ease-in-out hover:scale-105 dark:bg-slate-500 transform active:scale-100 transition-transform dark:text-gray-200 sm:block hidden" onClick={() => {
+                  SignUp(username, mail, password)
+                }}>
+                Signup
               </button>
             </div>
           </div>
@@ -65,10 +85,23 @@ function LogIn(props) {
           <div>
             <img src={Id} alt="BBS Id" className="h-40 w-40" />
           </div>
+
         </div>
       </div>
     </div>
   );
+}
+
+const SignUp = (username, email, password) => {
+  axios({
+    method: 'post',
+    url: '/auth',
+    data: {
+      username: username,
+      email: email,
+      password: password
+    }
+  });
 }
 
 export default LogIn;

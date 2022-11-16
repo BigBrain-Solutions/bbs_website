@@ -11,10 +11,8 @@ function Settings(props) {
 
     setIsOn(!isOn);
 
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
     if (isOn) {
 
-    
       localStorage.removeItem('theme')
       localStorage.theme = 'light'
 
