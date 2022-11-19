@@ -32,7 +32,18 @@ function Header(props) {
 
       <div className="w-1/3 sm:mt-1 mt-2">
         <div className="flex flex-row justify-end">
-          <img src={UserL} alt="" className="h-10 w-10 self-center" />
+          <img
+            src={UserL}
+            alt=""
+            className="h-10 w-10 self-center"
+            onClick={() => {
+              if (props.logIn === false) {
+                props.setLogIn(true);
+              } else {
+                props.setLogIn(false);
+              }
+            }}
+          />
 
           <button
             onClick={() => {

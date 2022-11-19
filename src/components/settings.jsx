@@ -34,7 +34,7 @@ function Settings(props) {
           props.setTrigger(false);
         }}
       >
-        <img src={Close} className="w-12 h-12 m-3" />
+        <img src={Close} className="w-12 h-12 m-3 cursor-pointer transition ease-in-out delay-75 hover:scale-105" />
       </button>
 
       <div className="flex flex-col h-full">
