@@ -32,31 +32,33 @@ function Header(props) {
 
       <div className="w-1/3 sm:mt-1 mt-2">
         <div className="flex flex-row justify-end">
-          <img
-            src={UserL}
-            alt=""
-            className="h-10 w-10 self-center"
-            onClick={() => {
-              if (props.logIn === false) {
-                props.setLogIn(true);
-              } else {
-                props.setLogIn(false);
-              }
-            }}
-          />
-
-          <button
-            onClick={() => {
-              if (props.logIn === false) {
-                props.setLogIn(true);
-              } else {
-                props.setLogIn(false);
-              }
-            }}
-            className="m-2 bg-slate-400 p-2 text-sm rounded-lg font-semibold shadow-md ease-in-out hover:scale-105 dark:bg-slate-500 transform active:scale-100 transition-transform dark:text-gray-200 sm:block hidden"
-          >
-            Sign in / Sign up
-          </button>
+          {localStorage.profile ? (
+            <img
+              src={UserL}
+              alt=""
+              className="h-10 w-10 self-center"
+              // onClick={() => {
+              //   if (props.logIn === false) {
+              //     props.setLogIn(true);
+              //   } else {
+              //     props.setLogIn(false);
+              //   }
+              // }}
+            />
+          ) : (
+            <button
+              onClick={() => {
+                if (props.logIn === false) {
+                  props.setLogIn(true);
+                } else {
+                  props.setLogIn(false);
+                }
+              }}
+              className="m-2 bg-slate-400 p-2 text-sm rounded-lg font-semibold shadow-md ease-in-out hover:scale-105 dark:bg-slate-500 transform active:scale-100 transition-transform dark:text-gray-200 sm:block hidden"
+            >
+              Sign in / Sign up
+            </button>
+          )}
         </div>
       </div>
     </div>

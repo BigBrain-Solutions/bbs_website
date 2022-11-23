@@ -70,7 +70,7 @@ function SignUpPage(props) {
 
           <div className="grid grid-rows-2 grid-flow-row w-56 m-1 ">
             <div className="justify-self-end cursor-default text-gray-400 dark:text-gray-800">
-              You alreadey have an account?
+              You already have an account?
             </div>
             <div
               className="justify-self-end text-blue-500 hover:text-blue-400 font-semibold cursor-pointer"
